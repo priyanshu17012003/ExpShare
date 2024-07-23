@@ -11,9 +11,10 @@ In the traditional job search landscape, there are limited platforms where candi
 # Solution↴
 
 ExpShare addresses this gap by providing a dedicated platform where students and candidates can:
-▶Share their experiences from small startups and tier 3 companies.
-▶Connect with other candidates to gain deeper insights into internships or interviews.
-▶Build a community that supports diverse career paths and opportunities.
+
+▶ Share their experiences from small startups and tier 3 companies.
+▶ Connect with other candidates to gain deeper insights into internships or interviews.
+▶ Build a community that supports diverse career paths and opportunities.
 
 # Features↴
 
