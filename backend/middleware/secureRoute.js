@@ -1,5 +1,6 @@
 const jwt=require("jsonwebtoken");
 const User=require("../models/user-model");
+const key=process.env.key||"SECRET";
 
 const secureRoute = async (req, res, next) => {
     try {
@@ -8,7 +9,7 @@ const secureRoute = async (req, res, next) => {
         {
             return res.status(401).json({ error: "No token, Unauthorized" });
         }
-        const decoded = jwt.verify(token, "SECRET");
+        const decoded = jwt.verify(token, key);
         if(!decoded)
         {
             return res.status(401).json({ error: "Invalid token, Unauthorized" });

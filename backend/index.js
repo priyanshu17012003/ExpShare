@@ -12,12 +12,12 @@ dotenv.config();
 
 //middleware
 app.use(cors());
-app.use(express.json())
+app.use(express.json());
 app.use(cookieParser());
 
 
-const url=process.env.url||"mongodb://localhost:27017/exps";
-const port=process.env.port||5000;
+const url=process.env.url;
+const port=process.env.port;
 
 try{
     mongoose.connect(url,{
