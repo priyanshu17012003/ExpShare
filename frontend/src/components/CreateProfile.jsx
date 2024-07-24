@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from "react-hook-form"
 import toast from 'react-hot-toast';
 import axios from 'axios';
 
 function CreateProfile() {
+
+  
   const {
     register,
     handleSubmit,

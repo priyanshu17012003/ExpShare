@@ -22,12 +22,12 @@ function App() {
     <Route path="/explores" element={authUser?<Explores/>:<Navigate to='/'></Navigate>}></Route>
     <Route path="/signUp" element={<SignUp/>}></Route>
     <Route path="/journeys" element={authUser?<Journeys/>:<Navigate to='/'></Navigate>}></Route>
-    <Route path="/journey/:userId" element={<SingleJourney/>}></Route>
+    <Route path="/journey/:userId" element={authUser?<SingleJourney/>:<Navigate to='/'></Navigate>}></Route>
     <Route path="/createProfile" element={<CreateProfile/>}></Route>
-    <Route path="/profile" element={<Profile/>}></Route>
-    <Route path="/showOtherProfile/:id" element={<ShowOtherProfile/>}></Route>
-    <Route path="/messages" element={<Messages/>}></Route>
-    <Route path="/editJourney/:id" element={<JourneysEdit/>}></Route>
+    <Route path="/profile" element={authUser?<Profile/>:<Navigate to='/'></Navigate>}></Route>
+    <Route path="/showOtherProfile/:id" element={authUser?<ShowOtherProfile/>:<Navigate to='/'></Navigate>}></Route>
+    <Route path="/messages" element={authUser?<Messages/>:<Navigate to='/'></Navigate>}></Route>
+    <Route path="/editJourney/:id" element={authUser?<JourneysEdit/>:<Navigate to='/'></Navigate>}></Route>
     </Routes>
     <Toaster />
     </>

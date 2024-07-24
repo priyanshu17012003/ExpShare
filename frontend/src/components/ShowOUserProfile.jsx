@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import useConversation from "../zustand/useConversation";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthProvider";
 import useGetPosts from "../context/useGetPosts";
 
 function ShowOUserProfile() {
-  const { id } = useParams();
+  const [authUser, setAuthUser] = useAuth();
+  const navigate = useNavigate();
+  const {selectedConversation, setSelectedConversation} = useConversation();
+  const {id}=useParams();
   const [profile, setProfile] = useState([]);
   const { posts } = useGetPosts();
 
@@ -24,6 +30,11 @@ function ShowOUserProfile() {
     };
     getProfile();
   }, [id]);
+
+  const handleClick = (profile) => {
+    setSelectedConversation(profile);
+    navigate(`/messages`);
+  }
 
   const filter = posts.filter((item) => item.email === profile.email);
   return (
@@ -70,6 +81,13 @@ function ShowOUserProfile() {
                   {profile.Llink}
                 </a>
               </div>
+              {
+                authUser.user.name===profile.name?(
+                  null
+                ):(
+                  <button className="btn bg-green-500 text-white cursor-pointer rounded-md hover:bg-base-100 hover:text-black hover:border-green-500" onClick={()=>handleClick(profile)}>Contact with me</button>
+                )
+              }
 
             </div>
           </div>

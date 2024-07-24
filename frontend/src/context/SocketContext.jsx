@@ -13,8 +13,9 @@ export const SocketProvider = ({ children }) => {
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [authUser, setAuthUser] = useAuth();
 
+
   useEffect(() => {
-    if (authUser) {
+    if (authUser && authUser.user) {
       const socket = io("http://localhost:5000", {
         query: { userId: authUser.user._id },
       });
