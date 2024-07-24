@@ -9,6 +9,7 @@ import Profile from "./pages/Profile";
 import Messages from "./pages/Messages";
 import ShowOtherProfile from "./pages/ShowOtherProfile";
 import JourneysEdit from "./pages/JourneysEdit";
+import Contacted from "./pages/Contacted";
 import {Routes,Route, Navigate} from "react-router-dom";
 import { Toaster } from 'react-hot-toast';
 import { useAuth } from "./context/AuthProvider";
@@ -28,6 +29,7 @@ function App() {
     <Route path="/showOtherProfile/:id" element={authUser?<ShowOtherProfile/>:<Navigate to='/'></Navigate>}></Route>
     <Route path="/messages" element={authUser?<Messages/>:<Navigate to='/'></Navigate>}></Route>
     <Route path="/editJourney/:id" element={authUser?<JourneysEdit/>:<Navigate to='/'></Navigate>}></Route>
+    <Route path="/contacted" element={<Contacted/>}></Route>
     </Routes>
     <Toaster />
     </>

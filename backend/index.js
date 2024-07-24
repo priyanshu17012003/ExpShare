@@ -6,6 +6,7 @@ const routeList=require("./routes/list-route")
 const routeUser=require('./routes/user-route');
 const routeProfile=require('./routes/profile-route');
 const routeMessage=require('./routes/message-route');
+const routeMembers=require('./routes/conversation-route');
 const dotenv=require("dotenv");
 const {app,server}=require('./socketIO/server');
 dotenv.config();
@@ -36,6 +37,7 @@ app.use("/api/list",routeList);
 app.use("/api/user",routeUser);
 app.use("/api/profile",routeProfile);
 app.use("/api/message",routeMessage);
+app.use("/api/conversation",routeMembers);
 
 
 server.listen(port,()=>(

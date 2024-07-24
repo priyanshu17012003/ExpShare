@@ -63,6 +63,9 @@ function Navbar() {
             <li>
             <Link to="/journeys">Journeys</Link>
             </li>
+            <li>
+            <Link to="/contacted">Contacted</Link>
+            </li>
             
           </ul>
         </div>
@@ -80,6 +83,9 @@ function Navbar() {
             {authUser ? <li><Link to="/profile">Profile</Link></li>:null}
             <li>
             <Link to="/journeys">Journeys</Link>
+            </li>
+            <li>
+            <Link to="/contacted">Contacted</Link>
             </li>
             
           </ul>
