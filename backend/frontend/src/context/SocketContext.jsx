@@ -13,10 +13,9 @@ export const SocketProvider = ({ children }) => {
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [authUser, setAuthUser] = useAuth();
 
-
   useEffect(() => {
     if (authUser && authUser.user) {
-      const socket = io("http://localhost:5000", {
+      const socket = io("https://expshare.onrender.com", {
         query: { userId: authUser.user._id },
       });
       setSocket(socket);
