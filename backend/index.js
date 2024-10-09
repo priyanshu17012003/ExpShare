@@ -22,10 +22,7 @@ const url=process.env.url;
 const port=process.env.port;
 
 try{
-    mongoose.connect(url,{
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    });
+    mongoose.connect(url);
 
     console.log("Successfully connected");
 }
